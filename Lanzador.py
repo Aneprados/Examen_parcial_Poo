@@ -30,8 +30,8 @@ def punto_mas_lejos_origen(puntos, origen):
     print(f"El punto más lejos del origen es: {punto_mas_lejos}")
 
 def consultar_rectangulo(rectangulo):
-    print(f"Base del rectángulo: {rectangulo.base}")
-    print(f"Altura del rectángulo: {rectangulo.altura}")
+    print(f"Base del rectángulo: {rectangulo.base()}")
+    print(f"Altura del rectángulo: {rectangulo.altura()}")
     print(f"Área del rectángulo: {rectangulo.area()}")
 
 # Uso de las funciones
@@ -43,3 +43,4 @@ consultar_distancias(A, B)
 punto_mas_lejos_origen({"A": A, "B": B, "C": C}, D)
 rectangulo = Rectangulo(A, B)
 consultar_rectangulo(rectangulo)
+
