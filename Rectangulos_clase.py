@@ -30,8 +30,23 @@ class Rectangulo:
         :return: El área del rectángulo.
         """
         return self.base() * self.altura()
-        @classmethod
-        def crear_con_puntos(cls, punto_inicial=None, punto_final=None):
+
+    @classmethod
+    def perimetro(cls, punto_inicial, punto_final):
+        """
+        Calcula el perímetro del rectángulo.
+        :return: El perímetro del rectángulo.
+        """
+        rect = cls(punto_inicial, punto_final)
+        return 2 * (rect.base() + rect.altura())
+    
+    def __str__(self):
+        """
+        Sobreescribe el método string para mostrar el rectángulo en formato (Punto inicial, Punto final).
+        """
+        return f"Rectángulo: ({self.punto_inicial}, {self.punto_final})"
+
+    def crear_con_puntos(cls, punto_inicial=None, punto_final=None):
             """
             Método de clase para crear un rectángulo a partir de dos puntos.
             :param punto_inicial: Instancia de la clase Punto.
