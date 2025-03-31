@@ -2,10 +2,13 @@ from Clase_punto import Punto
 from Rectangulos_clase import Rectangulo
 # Este código crea cuatro puntos y determina a qué cuadrante pertenecen, calcula vectores y distancias entre ellos,
 #Crear los puntos A, B, C y D
-A = Punto(2, 3)
-B = Punto(5, 5)
-C = Punto(-3, -1)
-D = Punto(0, 0)
+def crear_puntos():
+    A = Punto(2, 3)
+    B = Punto(5, 5)
+    C = Punto(-3, -1)
+    D = Punto(0, 0)
+    O = Punto()
+    return A, B, C, D, O
 
 # Imprimir los puntos
 def imprimir_puntos(puntos):
@@ -29,19 +32,18 @@ def punto_mas_lejos_origen(puntos, origen):
     punto_mas_lejos = max(distancias, key=distancias.get)
     print(f"El punto más lejos del origen es: {punto_mas_lejos}")
 
+# Crear el rectángulo correctamente
+
+
+# Ahora sí, pasar el objeto rectángulo a la función
+
+
 def consultar_rectangulo(rectangulo):
     print(f"Base del rectángulo: {rectangulo.calcular_base()}")
     print(f"Altura del rectángulo: {rectangulo.calcular_altura()}")
     print(f"Área del rectángulo: {rectangulo.calcular_area()}")
     print(f"Perímetro del rectángulo: {rectangulo.calcular_perimetro()}")
 
-# Uso de las funciones
-puntos = {"A": A, "B": B, "C": C, "D": D}
-imprimir_puntos(puntos)
-consultar_cuadrantes({"A": A, "C": C, "D": D})
-consultar_vectores(A, B)
-consultar_distancias(A, B)
-punto_mas_lejos_origen({"A": A, "B": B, "C": C}, D)
-rectangulo = Rectangulo(A, B)
-consultar_rectangulo(rectangulo)
+
+
 
