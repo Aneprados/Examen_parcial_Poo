@@ -1,4 +1,4 @@
-from Lanzador import crear_puntos, punto_mas_lejos_origen, imprimir_puntos, consultar_cuadrantes, consultar_vectores, consultar_distancias, consultar_rectangulo
+from Lanzador import crear_puntos, punto_mas_lejos_origen, imprimir_puntos, consultar_cuadrantes, consultar_vectores, consultar_distancias, consultar_rectangulo, Rectangulo
 
 
 
