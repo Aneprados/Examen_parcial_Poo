@@ -7,43 +7,39 @@ B = Punto(5, 5)
 C = Punto(-3, -1)
 D = Punto(0, 0)
 
-class Rectangulo:
-    def __init__(self, punto1, punto2):
-        self.base = abs(punto2.x - punto1.x)
-        self.altura = abs(punto2.y - punto1.y)
-
-    # Otros métodos de la clase
-    def area(self):
-        return self.base * self.altura
-    
 # Imprimir los puntos
-print(f"Punto A: {A}")
-print(f"Punto B: {B}")
-print(f"Punto C: {C}")
-print(f"Punto D: {D}")
+def imprimir_puntos(puntos):
+    for nombre, punto in puntos.items():
+        print(f"Punto {nombre}: {punto}")
 
-# Consultar a qué cuadrante pertenecen los puntos
-print(f"Cuadrante de A: {A.cuadrante()}")
-print(f"Cuadrante de C: {C.cuadrante()}")
-print(f"Cuadrante de D: {D.cuadrante()}")
+def consultar_cuadrantes(puntos):
+    for nombre, punto in puntos.items():
+        print(f"Cuadrante de {nombre}: {punto.cuadrante()}")
 
-# Consultar los vectores AB y BA
-print(f"Vector AB: {A.vector(B)}")
-print(f"Vector BA: {B.vector(A)}")
+def consultar_vectores(punto1, punto2):
+    print(f"Vector {punto1} a {punto2}: {punto1.vector(punto2)}")
+    print(f"Vector {punto2} a {punto1}: {punto2.vector(punto1)}")
 
-# Consultar la distancia entre los puntos A y B, y B y A
-print(f"Distancia entre A y B: {A.distancia(B)}")
-print(f"Distancia entre B y A: {B.distancia(A)}")
+def consultar_distancias(punto1, punto2):
+    print(f"Distancia entre {punto1} y {punto2}: {punto1.distancia(punto2)}")
+    print(f"Distancia entre {punto2} y {punto1}: {punto2.distancia(punto1)}")
 
-# Determinar cuál de los puntos A, B o C está más lejos del origen
-distancias = {"A": A.distancia(D), "B": B.distancia(D), "C": C.distancia(D)}
-punto_mas_lejos = max(distancias, key=distancias.get)
-print(f"El punto más lejos del origen es: {punto_mas_lejos}")
+def punto_mas_lejos_origen(puntos, origen):
+    distancias = {nombre: punto.distancia(origen) for nombre, punto in puntos.items()}
+    punto_mas_lejos = max(distancias, key=distancias.get)
+    print(f"El punto más lejos del origen es: {punto_mas_lejos}")
 
-# Crear un rectángulo utilizando los puntos A y B
+def consultar_rectangulo(rectangulo):
+    print(f"Base del rectángulo: {rectangulo.base}")
+    print(f"Altura del rectángulo: {rectangulo.altura}")
+    print(f"Área del rectángulo: {rectangulo.area()}")
+
+# Uso de las funciones
+puntos = {"A": A, "B": B, "C": C, "D": D}
+imprimir_puntos(puntos)
+consultar_cuadrantes({"A": A, "C": C, "D": D})
+consultar_vectores(A, B)
+consultar_distancias(A, B)
+punto_mas_lejos_origen({"A": A, "B": B, "C": C}, D)
 rectangulo = Rectangulo(A, B)
-
-# Consultar la base, altura y área del rectángulo
-print(f"Base del rectángulo: {rectangulo.base}")
-print(f"Altura del rectángulo: {rectangulo.altura}")
-print(f"Área del rectángulo: {rectangulo.area()}")
+consultar_rectangulo(rectangulo)
