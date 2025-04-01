@@ -44,6 +44,22 @@ def consultar_rectangulo(rectangulo):
     print(f"Área del rectángulo: {rectangulo.calcular_area()}")
     print(f"Perímetro del rectángulo: {rectangulo.calcular_perimetro()}")
 
+def lanzado():
+    # Crear los puntos
+    A, B, C, D, O = crear_puntos()
 
+    # Guardar los puntos en un diccionario
+    puntos = {"A": A, "B": B, "C": C, "D": D}
 
+    # Imprimir información de los puntos
+    imprimir_puntos(puntos)
+    consultar_cuadrantes(puntos)
+    consultar_vectores(A, B)
+    consultar_distancias(A, B)
+    punto_mas_lejos_origen(puntos, O)
 
+    # Crear un rectángulo con los puntos A y B
+    rectangulo = Rectangulo(A, B)
+
+    # Consultar información del rectángulo
+    consultar_rectangulo(rectangulo)
